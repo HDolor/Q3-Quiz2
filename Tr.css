@@ -1,0 +1,110 @@
+h1{
+	text-align: center;
+}
+button{
+	text-align: center;
+	font-weight: bold;
+	color: white ;
+	background: navy;
+	border-left: 2.5px solid white;
+	border-top: 2.5px solid white;
+	border-bottom: 2.5px solid black;
+	border-right: 2.5px solid black;
+	border-radius: 5px;
+	transition: all 0.35s;
+}
+button:hover{
+	border-left: 2.5px solid black;
+	border-top: 2.5px solid black;
+	border-bottom: 2.5px solid white;
+	border-right: 2.5px solid white;
+}
+.alignment{
+	text-align: center;
+}
+.col{
+	background-color: darkblue;
+	text-align: center;
+	border-radius: 0 0 16px 16px;
+	border-top: 4px solid lightblue;
+	border-bottom: 6px solid steelblue;
+}
+@media print{
+	body{
+		visibility: hidden;
+		background-color: black;
+	}
+	#pit{
+		visibility: visible;
+		position: absolute;
+		left: 160px;
+		top: 160px;
+		background-color: darkblue;
+		color: black;
+	}
+}
+.hoov{
+	transition: all 0.15s;
+}
+.hoov:hover{
+	background-color: white;
+	color: black;
+	font-weight: bold;
+	border: solid black;
+}
+label{
+	font-weight: bold;
+}
+details{
+	text-align: center;
+}
+hr{
+	border: 5px solid black;
+	background-color: black;
+	border-radius: 5px;
+}
+Summary{
+	font-weight: bold;
+}
+select{
+	text-align: center;
+	font-size: 24px;
+	padding: 2px;
+}
+option{
+	font-size: 24px;
+}
+.imperial-script-regular {
+  font-family: "Imperial Script", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 27px;
+}
+.windsong-medium {
+  font-family: "WindSong", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 27px;
+}
+.great-vibes-regular {
+  font-family: "Great Vibes", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 27px;
+}
+input{
+	text-align: center;
+}
+.alert{
+	text-align: center;
+}
+#pri{
+	font-size: 30px;
+	text-align: center;
+}
+body{
+	background-image: url(map.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: #212121;
+}

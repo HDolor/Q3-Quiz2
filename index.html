@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Train Ticket Form</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="Tr.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Imperial+Script&family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="p-2">
+	<div class="container bg-primary p-3 text-light mt-4 mb-4 alignment rounded bg-opacity-75">
+		<h1 class="bg-secondary rounded p-1 fw-bold">Ticket Register</h1>
+		<br>
+		<div class="row alignment p-2 m-2">
+			<div class="col m-2 p-2">
+				<details ontoggle="give()">
+					<summary>Personal Info</summary>
+					<hr>
+					<form>
+						<label>Enter First Name:</label>
+						<br>
+						<input type="text" id="fna" onchange="upe()" required class="bg-dark text-light fw-bold" placeholder="Input your First name">
+						<br>
+						<label>Enter Last Name:</label>
+					    <br>
+						<input type="text" id="lna" onchange="upe()" required class="bg-dark text-light fw-bold" placeholder="Input your Last name">
+						<br>
+						<label>Enter Email:</label><br>
+						<input type="email" id="emi" required class="bg-dark text-light fw-bold" placeholder="Input your Email">
+						<br><br>
+						<button type="button" onmouseout="outbound()" onmouseover="inbound()" id="sub" onclick="infodata()">Submit</button>
+					</form>
+				</details>
+			</div>
+			<div class="col m-2 p-2">
+				<details ontoggle="give()">
+					<summary>Ticket Price</summary>
+					<hr>
+					<form>
+						<label class="fw-bold">Seat Class:</label>
+						<br>
+						<select class="form-select bg-dark text-light fw-bold hoov" id="set" onchange="pri()">
+							<option disabled selected class="bg-dark text-light fw-bold">Select</option>
+							<option value="40" class="bg-light text-dark fw-bold">Economy</option>
+							<option value="80" class="bg-secondary text-light fw-bold">Premium Economy</option>
+							<option value="119" class="bg-light text-dark fw-bold">Sleeper</option>
+							<option value="155" class="bg-secondary text-light fw-bold">Business</option>
+							<option value="330" class="bg-light text-dark fw-bold imperial-script-regular">First Class</option>
+							<option value="669" class="bg-secondary text-light fw-bold great-vibes-regular">Ceo</option>
+							<option value="1560" class="bg-light text-dark fw-bold windsong-medium">Governor</option>
+						</select>
+						<br>
+						<label>To Where:</label>
+						<br>
+						<select class="form-select bg-dark text-light fw-bold hoov" id="wer" onchange="pri()">
+							<option disabled selected class="bg-dark text-light fw-bold">Select</option>
+							<option value="30" class="bg-light text-dark fw-bold">San Juan</option>
+							<option value="35" class="bg-secondary text-light fw-bold">Manila</option>
+							<option value="38" class="bg-light text-dark fw-bold">Paranaque</option>
+							<option value="42" class="bg-secondary text-light fw-bold">Quezon</option>
+							<option value="33" class="bg-light text-dark fw-bold">Pasay</option>
+							<option value="34" class="bg-secondary text-light fw-bold">Malate</option>
+							<option value="56" class="bg-light text-dark fw-bold">Antipolo</option>
+							<option value="47" class="bg-secondary text-light fw-bold">Caloocan</option>
+							<option value="31" class="bg-light text-dark fw-bold">Mandaluyong</option>
+							<option value="32" class="bg-secondary text-light fw-bold">Makati</option>
+							<option value="45" class="bg-light text-dark fw-bold">Las Pinas</option>
+							<option value="58" class="bg-secondary text-light fw-bold">Cavite</option>
+							<option value="89" class="bg-light text-dark fw-bold">Batangas</option>
+							<option value="164" class="bg-secondary text-light fw-bold">Albay</option>
+							<option value="136" class="bg-light text-dark fw-bold">Tarlac</option>
+							<option value="32" class="bg-secondary text-light fw-bold">Taguig</option>
+							<option value="121" class="bg-light text-dark fw-bold">Nueva Ecija</option>
+							<option value="107" class="bg-secondary text-light fw-bold">Pampanga</option>
+							<option value="94" class="bg-light text-dark fw-bold">Laguna</option>
+							<option value="35" class="bg-secondary text-light fw-bold">Pasig</option>
+							<option value="59" class="bg-light text-dark fw-bold">Rizal</option>
+							<option value="55" class="bg-secondary text-light fw-bold">Bulacan</option>
+							<option value="154" class="bg-light text-dark fw-bold">Pangasinan</option>
+							<option value="125" class="bg-secondary text-light fw-bold">Zambales</option>
+							<option value="67" class="bg-light text-dark fw-bold">Calamba</option>
+							<option value="154" class="bg-secondary text-light fw-bold">Benguet</option>
+							<option value="169" class="bg-light text-dark fw-bold">Isabela</option>
+						</select>
+						<br><br>
+						<h3 class="fw-bold">Price:</h3>
+						<div class="alert alert-secondary text-light bg-dark fw-bold" id="pri" role="alert"></div>
+						<br>
+						<button type="button" onmouseout="outbound1()" onmouseover="inbound1()" id="sub1" onclick="pritim()">Submit</button>
+					</form>
+				</details>
+			</div>
+			<div class="col m-2 p-2">
+				<details ontoggle="give()">
+					<summary>Ticket Receipt</summary>
+					<hr>
+					<form>
+						<div id="pit">
+							<img src="Trainticket.jpeg" class="rounded border border-4 border-dark" width="345" height="175">
+							<br><br>
+							<h3 id="rit" class="text-light fw-bold"></h3>
+							<p id="ino" class="text-light fw-bold"></p>
+							<p id="tim" class="text-light fw-bold"></p>
+							<h4 id="pritim" class="text-light fw-bold"></h4>
+					    </div>
+						<br>
+						<button type="button" onmouseout="outbound2()" onmouseover="inbound2()" id="sub2" onclick="window.print()">Print</button>
+					</form>
+				</details>		
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="container p-2">
+		<img src="NPTRW.png" class="float-end rounded" width="170" height="170">
+	</div>
+	<br>
+	<div class="container-fluid bg-primary fixed-bottom p-2">
+		<h3 class="text-center text-light">Harvey Wayne B. Dolor | 9-Sapphire</h3>
+	</div>
+	<script type="text/javascript">
+		function outbound() {
+			document.getElementById('sub').style.color = "white";
+			document.getElementById('sub').style.background = "navy";
+		}
+		function inbound() {
+			document.getElementById('sub').style.transition = "all 0.35s"
+			document.getElementById('sub').style.color = "black";
+			document.getElementById('sub').style.background = "orange";
+		}
+		function outbound1() {
+			document.getElementById('sub1').style.color = "white";
+			document.getElementById('sub1').style.background = "navy";
+		}
+		function inbound1() {
+			document.getElementById('sub1').style.transition = "all 0.35s"
+			document.getElementById('sub1').style.color = "black";
+			document.getElementById('sub1').style.background = "orange";
+		}
+		function outbound2() {
+			document.getElementById('sub2').style.color = "white";
+			document.getElementById('sub2').style.background = "navy";
+		}
+		function inbound2() {
+			document.getElementById('sub2').style.transition = "all 0.35s"
+			document.getElementById('sub2').style.color = "black";
+			document.getElementById('sub2').style.background = "orange";
+		}
+		function upe() {
+			let fnam = document.getElementById('fna');
+			let lnam = document.getElementById('lna');
+			fnam.value = fnam.value.toUpperCase()
+			lnam.value = lnam.value.toUpperCase()
+		}
+		function infodata(){
+			let lnm = document.getElementById('lna').value;
+			let fnm = document.getElementById('fna').value;
+			document.getElementById('rit').innerHTML = "Name : " + lnm + ", " + fnm;
+		}
+		function pri(){
+			let set = document.getElementById('set').value;
+			let wer = document.getElementById('wer').value;
+			let pri = (Number(set) + Number(wer)) * 1.675;
+			document.getElementById('pri').innerHTML = "₱ " + pri.toFixed(2);
+		}
+		function pritim(){
+			let set = document.getElementById('set').value;
+			let wer = document.getElementById('wer').value;
+			let tme = new Date();
+			let pri = (Number(set) + Number(wer)) * 1.675;
+			document.getElementById('pritim').innerHTML = "₱ " + pri.toFixed(2);	
+			document.getElementById('tim').innerHTML = "Time is: <br>" + tme;
+		}
+	</script>
+</body>
+</html>
